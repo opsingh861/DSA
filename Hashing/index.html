@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="artGalleryApp">
+
+<head>
+  <title>Angular Art Gallery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .thumbnail {
+      height: 200px;
+      width: 200px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div ng-controller="artGalleryCtrl">
+    <div class="container">
+      <h1>Angular Art Gallery</h1>
+      <div class="row">
+        <div class="col-md-3" ng-repeat="image in images">
+          <div class="thumbnail">
+            <img ng-src="{{image.src}}" alt="{{image.alt}}" class="img-responsive">
+          </div>
+          <p>{{image.caption}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var app = angular.module('artGalleryApp', []);
+    app.controller('artGalleryCtrl', function($scope) {
+      $scope.images = [{
+          src: 'https://via.placeholder.com/200',
+          alt: 'Image 1',
+          caption: 'This is the first image'
+        },
+        {
+          src: 'https://via.placeholder.com/200',
+          alt: 'Image 2',
+          caption: 'This is the second image'
+        },
+        {
+          src: 'https://via.placeholder.com/200',
+          alt: 'Image 3',
+          caption: 'This is the third image'
+        }
+      ];
+    });
+  </script>
+</body>
+
+</html>
