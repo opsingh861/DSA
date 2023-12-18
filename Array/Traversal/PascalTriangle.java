@@ -21,7 +21,7 @@ public class PascalTriangle {
   }
 
   public static int [][] pascalTriangle(int n) {
-    int arr[][] = new int[n][n];
+    int arr[][] = new int[n][];
     for (int i = 0; i < n; i++) {
         int temp[] = new int[i+1];
         int ans = 1;
@@ -55,6 +55,8 @@ public class PascalTriangle {
     int n = 5;
 
     // printRow(5);
-    System.out.println(NCR(1, 1));
+    // System.out.println(NCR(1, 1));
+    System.out.println(Math.ceil(5.8));
+    System.out.println(Math.floor(5.8));
   }
 }
